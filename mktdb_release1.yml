@@ -1,0 +1,14 @@
+## global definitions
+global:
+  key1: "value1"
+
+## oracle
+oracle:
+  files: "oracle/create_table.sql"
+
+## informatica
+informatica:
+  workflow: "informatica/CICD_MARIO/W_ADDRESS_TO_FILE.XML"
+
+
+
