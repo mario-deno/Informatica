@@ -1,5 +1,5 @@
 #!/bin/bash
-ORACLE_HOME=/app/oracle/product/11.2.0
+export ORACLE_HOME=/app/oracle/product/11.2.0
 
 
 #FILE="pl_script_1.sql,pl_script_2.sql,pl_script_3.sql"
