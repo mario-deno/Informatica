@@ -1,7 +1,9 @@
 #!/bin/bash
 
 function parse_yaml {
-   local prefix=$2
+   local prefix=$3
+   # object you are searching for (within yml)
+   local objects=$2 
    local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
    sed -ne "s|^\($s\):|\1|" \
         -e "s|^\($s\)\($w\)$s:$s[\"']\(.*\)[\"']$s\$|\1$fs\2$fs\3|p" \
@@ -12,11 +14,19 @@ function parse_yaml {
       for (i in vname) {if (i > indent) {delete vname[i]}}
       if (length($3) > 0) {
          vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
-         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+	 #printf("objects: %s","'$objects'\n");
+	 #printf("%s%s\n",vn, $2);
+	 if (vn$2 == "'$objects'")
+		printf("%s",$3);
+		#printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);		
       }
    }'
 }
 
 
-parse_yaml $1
+parse_yaml $1 $2 $3
+
+
+#usage ./parse_yaml.sh <file.yml> <parent_child key>
+
 

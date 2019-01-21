@@ -4,7 +4,8 @@ global:
 
 ## oracle
 oracle:
-  files: "oracle/create_table.sql"
+  files: "oracle/create_table.sql,oracle/create_table2.sql"
+  server: "ora.informatica.intranet.fw"
 
 ## informatica
 informatica:
