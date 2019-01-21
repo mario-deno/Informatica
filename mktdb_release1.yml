@@ -4,7 +4,7 @@ global:
 
 ## oracle
 oracle:
-  files: "oracle/create_table.sql,oracle/create_table2.sql"
+  files: "oracle/cr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,oracle/dr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,oracle/ins_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql"
   server: "ora.informatica.intranet.fw"
 
 ## informatica
