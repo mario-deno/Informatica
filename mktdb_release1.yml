@@ -4,7 +4,7 @@ global:
 
 ## oracle
 oracle:
-  files: "oracle/cr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,oracle/dr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,oracle/ins_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql"
+  files: "jenkins_workspace/oracle/cr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/dr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/ins_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql"
   server: "ora.informatica.intranet.fw"
 
 ## informatica
