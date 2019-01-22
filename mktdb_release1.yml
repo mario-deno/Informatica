@@ -9,7 +9,7 @@ oracle:
 
 ## informatica
 informatica:
-  workflow: "informatica/CICD_MARIO/W_ADDRESS_TO_FILE.XML"
+  workflow: "jenkins_workspace/pwc/W_ADDRESS_TO_FILE.XML"
 
 
 
