@@ -1,0 +1,91 @@
+# 
+# PowerCenter Data Validation Option Metadata export file
+# Exported objects: selected
+# Username: "mleone"
+# DV Repository; DBType=ORACLE;Driver=com.informatica.jdbc.oracle.OracleDriver;URL=jdbc:informatica:oracle://db404ora.intranet.fw:1521;ServiceName=MDM_SVI;username=DVO_OWN;password=*****
+# Exported at: 02/12/2019 16:16:00 CET
+# 
+
+# 
+# Repositories
+# 
+
+# 
+# SQLViews
+# 
+
+# 
+# LookupViews
+# 
+
+# 
+# JoinViews
+# 
+
+# 
+# AggregateViews
+# 
+
+# 
+# TablePairs & SingleTables
+# 
+
+<TablePair>
+    Name = "JSOURCETABLECICDTARGETTABLECICD"
+    Folder = "default"
+    Description = "TESTCICD"
+    ExternalID = "TESTCICD"
+    CacheSize = "Auto"
+    SaveDetaliedBadRecords = false
+    EnableSampling = false
+    <TableA>
+        Name = "test/CICD_MARIO/Sources/MDM_SVI/SOURCE_TABLE_CICD"
+        Connection = "EDHMDB_OWN"
+        WhereClause = ""
+        WhereClauseDSQ = false
+        AlreadySorted = false
+        IsLarge = false
+        InDB = false
+    <TableB>
+        Name = "test/CICD_MARIO/Targets/TARGET_TABLE_CICD"
+        Connection = "EDHMDB_OWN"
+        WhereClause = ""
+        WhereClauseDSQ = false
+        AlreadySorted = false
+        IsLarge = true
+        InDB = false
+    <Join>
+        ColumnA = "ACCOUNT_NUMBER"
+        ColumnB = "ACCOUNT_NUMBER"
+    <TestCase>
+        TestType = "VALUE"
+        ColumnA = "ACCOUNT_NUMBER"
+        ColumnB = "ACCOUNT_NUMBER"
+        Operator = "="
+        Comments = ""
+        CaseInsensitive = false
+        TrimRightWhitespace = false
+        TreatNullsEqual = true
+    <TestCase>
+        TestType = "VALUE"
+        <ExpressionA>
+            Expression = "UPPER(STATUS)"
+            Datatype = "string"
+            Precision = 20
+            Scale = 0
+        ColumnB = "STATUS"
+        Operator = "="
+        Comments = ""
+        CaseInsensitive = false
+        TrimRightWhitespace = false
+        TreatNullsEqual = true
+    <TestCase>
+        TestType = "VALUE"
+        ColumnA = "ACTIVATION_DATE"
+        ColumnB = "ACTIVATION_DATE"
+        Operator = "="
+        Comments = ""
+        CaseInsensitive = false
+        TrimRightWhitespace = false
+        TreatNullsEqual = true
+
