@@ -4,9 +4,9 @@
 #
 
 
-if [[ $# -lt 2 || $# -gt 2 ]];
+if [[ $# -lt 1 || $# -gt 1 ]];
   then
-    echo "usage run_test <testfile> <external_id>"
+    echo "usage run_test <external_id>"
     exit 1
 fi
 
@@ -26,29 +26,13 @@ export DV_CONFIG_DIR=$HOME/.config/DataValidator
 export PC_CLIENT_INSTALL_PATH=$INFA_HOME/server/bin
 
 
-#import test DVO repository (oracle)
-
-#echo -e "refreshing repository..\n"
-
 #DVOCmd RefreshRepository test --folderList --folder CICD_MARIO --dryrun 
+
+DVOCmd InstallTests $1 --forceInstall
 if [ $? -eq 0 ]; then
-	echo -e "DVO repository refreshed" 
-	DVOCmd ImportMetadata $1 --overwrite
-	if [ $? -eq 0 ]; then
-		echo -e "metadata imported"
-		DVOCmd InstallTests $2 --forceInstall
-		if [ $? -eq 0 ]; then
-			echo -e "metadata imported"
-			DVOCmd InstallTests $2 --forceInstall
-			if [ $? -eq 0 ]; then 
-				echo -e "test installed"
-				DVOCmd RunTests $2
-			else exit $?
-			fi
-		else exit $?
-		fi
-	else exit $?
-	fi
+	echo -e "test installed"
+	echo -e "run test..."
+	DVOCmd RunTests $1
 else exit $?
 fi
 
