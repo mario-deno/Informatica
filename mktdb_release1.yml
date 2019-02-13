@@ -10,6 +10,11 @@ oracle:
 ## informatica
 informatica:
   workflow: "jenkins_workspace/pwc/W_ADDRESS_TO_FILE.XML"
+  test: "jenkins_workspace/dvo/CICD_TEST.dvml"
 
+## dvo
+dvo:
+ runworkflow: "W_CICD"
+ runtest: "TESTCICD"
 
 
