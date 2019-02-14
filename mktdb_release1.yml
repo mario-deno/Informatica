@@ -4,12 +4,12 @@ global:
 
 ## oracle
 oracle:
-  files: "jenkins_workspace/oracle/dr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/cr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/ins_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql"
+  files: "jenkins_workspace/oracle/dr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/cr_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/ins_tab_EDHMDB_OWN_SOURCE_TABLE_CICD.sql,jenkins_workspace/oracle/dr_tab_EDHMDB_OWN_TARGET_TABLE_CICD.sql,jenkins_workspace/oracle/cr_tab_EDHMDB_OWN_TARGET_TABLE_CICD.sql"
   server: "ora.informatica.intranet.fw"
 
 ## informatica
 informatica:
-  workflow: "jenkins_workspace/pwc/W_ADDRESS_TO_FILE.XML"
+  workflow: "jenkins_workspace/pwc/W_CICD.XML"
   test: "jenkins_workspace/dvo/CICD_TEST.dvml"
 
 ## dvo
