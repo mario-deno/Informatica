@@ -6,7 +6,7 @@
 
 <!--FOLDERMAP matches the folders in the imported file with the folders in the target repository -->
 
-<IMPORTPARAMS CHECKIN_AFTER_IMPORT="YES">  
+<IMPORTPARAMS CHECKIN_AFTER_IMPORT="YES" APPLY_LABEL_NAME="jenkins_deploy">  
 
 <FOLDERMAP 
 SOURCEFOLDERNAME="CICD_MARIO" 

@@ -19,6 +19,14 @@ FLUSSO=WF_T_DWH_OMC
 echo "CONNECTING..."
 
 pmrep connect -r REPO_FW_DEV_961 -d DMN_FW_DEV_961 -n mleone -x mleone
-pmrep objectimport -i $1 -c $2 -l logfile.log
 
-echo "FINISHED..."
+if [ $? -eq 0 ]; then
+	echo -e "connected tp repository"
+	pmrep objectimport -i $1 -c $1.CTRFL
+	if [ $? -eq 0 ]; then
+		echo -e "imported"
+	else exit $?
+	fi
+else exit $?
+fi
+
