@@ -1,0 +1,31 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.29">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.60">
+    <script>stage(&apos;Deploy integration&apos;) {
+    echo &quot;deployed to integration&quot;
+}
+
+stage(&apos;Test&apos;) {
+    parallel &apos;NFT&apos;: {
+        stage(&apos;NFT&apos;) {
+            echo &quot;NFT performed&quot;
+        }
+    }, &apos;IT&apos;: {
+        stage(&apos;IT&apos;) {
+            echo &quot;IT performed&quot;
+        }
+    }
+}
+
+stage(&apos;Deploy Prod&apos;) {
+    echo &quot;deployed to prod&quot;
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

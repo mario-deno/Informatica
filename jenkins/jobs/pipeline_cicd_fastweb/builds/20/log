@@ -1,0 +1,236 @@
+Started by user unknown or anonymous
+Running in Durability level: MAX_SURVIVABILITY
+[8mha:////4ADrb3OvLRmRSoWZxtWXb6bu7ujy3VXdOeZof3GhY0+JAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycohUghExsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jduZBmjwAAAAA==[0m[Pipeline] node
+Running on [8mha:////4GGDPv6lDiSDY16T9iL8T7D5vzdvNkBpSkPTiQMeq9aVAAAAnh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZh/eT83ILSktQifY3cxGIgrakPAHib2iPIAAAA[0mJenkins in /var/lib/jenkins/workspace/pipeline_test@3
+[8mha:////4GaqDk1KwG03aPM1rxVRBcvhKtAaBRA9wZBIt+5vUaNaAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gA0xsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jfoP95RwAAAAA==[0m[Pipeline] {
+[8mha:////4CH8paiPP9mDgqnwdcLh71ROVIJKM15iQi+m9Ul6rpwdAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0gQkxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jc09154wAAAAA==[0m[Pipeline] stage
+[8mha:////4IKoAZrJNoQNE/gJcfXcPK1aV+Ke8ak21Cfffe5f3v3pAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+KOrAycoh0ggUxsUZZOEFIQkgb/d8mKe3EibgadyBQiQlLlmxL1nu+oE4RjhQdby12HpP2vA+jK4lPFLtroIm3dOGaMFGwXNpJkrGnpUrKFhaxClYC1hZ1oOTRZdiIVt1VExS65pxj2Q4CKm8GeAAThZxVzN8yR9jeRpMIf5y/AJj7DGxXvP/86jek7ggRwAAAAA==[0m[Pipeline] { (Preparation)
+[8mha:////4PRPpnIs0RGXzCw6c/Onif82A7XSuGxZAbmQXhn6a6B1AAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbaWGsbAmNJ0AWEZb8zwLrbuWJvJp3kLiJlZNMMm+a93rDOic4UbLcG+wdZu14DKOti0+U+lugiXu6ck2YKRguzSSpM+cFJRUDS1gDKwEbgzpQdmgLbIVXD9UGhba9lFS/o4DGdQM8gYlqLiqVL8wJdvexy4Q/z18BzLEA29ce4gfg7KmOvAAAAA==[0m[Pipeline] git
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/mario-deno/Informatica.git # timeout=10
+Fetching upstream changes from https://github.com/mario-deno/Informatica.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/mario-deno/Informatica.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision a10150c1524cb9e675266bcdbb4b5c9351a6d230 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a10150c1524cb9e675266bcdbb4b5c9351a6d230
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master a10150c1524cb9e675266bcdbb4b5c9351a6d230
+Commit message: "Update W_ADDRESS_TO_FILE_ctr_file.xml"
+ > git rev-list --no-walk a10150c1524cb9e675266bcdbb4b5c9351a6d230 # timeout=10
+[8mha:////4IQo6Q5HlScdpX/Lj6Qr7Or+iVw1GVXNnbIDr2A4DxkhAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQTbGRNjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9Dg2gqvAAAAA==[0m[Pipeline] }
+[8mha:////4FMRb+/Qu69nvljX9y4gGTHbbTC1PkTmrP84Zv31BOPDAAAAoh+LCAAAAAAAAP9tjTEOAiEURD9rLGwtPQRbWRhjZUtoPAGyiLDkfxZYdytP5NW8g8RNrJxkknnTvNcb1jnBiZLl3mDvMGvHYxhtXXyi1N8CTdzTlWvCTMFwaSZJnTkvKKkYWMIaWAnYGNSBskNbYCu8eqg2KLTtpaT6HQU0rhvgCUxUc1GpfGFOsLuPXSb8ef4KYI6xADvU7j9J+wGOvAAAAA==[0m[Pipeline] // stage
+[8mha:////4FE2HCLhF481272uj2BhdxWvM7vTxwQ6SYkYyYwyfCHoAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQDEh2iorXc8AITG+PEugv2haTiRXyNPxCIRMVWOyut5vmCMic4UPKycdgGzHWQXez91ORAqb1EGmRDZ1kTZopOajdosu44oyZ2MEcUsFCwdFhHygE9w0o15m6qaNBXJ07TtldQBHuDBwg1mdkk/sKYYH3tbSb8ef4KYOwYxI6h2G4+x/INtuQqUcEAAAA=[0m[Pipeline] stage
+[8mha:////4LDJ//+Ga5bnHhXZgyfmmOxMH1z3IZF2S+/Zpn97bobkAAAApR+LCAAAAAAAAP9tjTEOwjAUQ3+DOrAycoiUzoiJNerCCUITQtLo/zZJSSdOxNW4Ay2VmPBg2Zas93pDGQOcKBjuNHYWY2t570czJ54pdDdPmTu68pYwkte80bkhpc9rbShpWFUw2AjYamw9RYsmwU44+ZCVl2iqSwrzdhTArBrgCYWYyUmG9C1TgP19VJHwx/kLgKlPwOrDYvXyLD8BobDcwgAAAA==[0m[Pipeline] { (Build)
+[8mha:////4Oes9Y/VfOJArb72K3m6mlpDwJJHymQBlw2cg0l23h4VAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggysXWsbBkaT4AJIoT5nwCRVJ7Iq3kH0cxYucXOvm3e8wXrGOBIQTOrcDAYO8O8m3RZLFMYro4ys3RhHWEkp5hQWVCvTgsKSgqWVDWsOGwUdo6iQZ1gy628y8ZJ1M05hfIdONSmH+EBFS/mJEP6whxgd5v6SPjz/BXA7BPUbfupvX8DpQJrNb4AAAA=[0m[Pipeline] echo
+nothing for now
+[8mha:////4PCBFDIblR3VpRtLOH3uWN7QA3vus/xhCch/RlY5vqDIAAAAox+LCAAAAAAAAP9tjTESwiAURH/iWNhaeggyGUvHypah8QSYIEKY/wkQSeWJvJp3EM2MlVvs7NvmPV+wjgGOFDSzCgeDsTPMu0mXxTKF4eooM0sX1hFGcooJlQX16rSgoKRgSVXDisNGYecoGtQJttzKu2ycRN2cUyjfgUNt+hEeUPFiTjKkL8wBdrepj4Q/z18BzN4nqNv9p9o3geV5574AAAA=[0m[Pipeline] }
+[8mha:////4DtI2busYZyJgUVzq6wKLD9FuBNj/uM88SpGWaDcZ5CLAAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOICEh2iSmu54QUmNsaJdWdsh6TiRXyNPxCIRMUWq51t5vmCZYpw5GixNdQ5So3D4Hs7LRw4dhfPA7Z8xoYpsTcozSBZm3pGydnAnKKEhYCVocZzcmQzrEWr7qryimx1ynH6DgJKp2/wgEJM5qxi/sIYYXPtdWL6ef4KYAwhQ7nbf2r7Bq/le42+AAAA[0m[Pipeline] // stage
+[8mha:////4BELXav85zmGC1u7t0O8PvofG93p+Gcup5YRbqpgK4FpAAAAph+LCAAAAAAAAP9tjTEOwjAQBM9BKWgpeYQjJKgQFa3lhheY2Bgn1l2wLyQVL+Jr/IFAJCq22llpNc8XlDnBgZKXjcM2YK6D7GLvpyYHSu0l0iAbOsuaMFN0UrtBk3XHGTWxgzmigIWCpcM6Ug7oGVaqMXdTRYO+OnGatr2CItgbPECoycwm8RfGBOtrbzPhz/NXAGPHILYMxWb3OZZvBXXnAcEAAAA=[0m[Pipeline] stage
+[8mha:////4B0Iwvfz4hBnTwrsZcxudRKrQJVg/VAvnFqLJ+6tG3pPAAAApx+LCAAAAAAAAP9tjTEOwjAUQ3+LOrAycohUDLAgpq5RFk4QmhDSRv+Xn5R24kRcjTvQUokJD5ZtyXqvNxSR4UTsRGOx9RhrL7rQuymJgbi9BhpEQxdRE0YKVig7KDK2WqqiZGFRlsNKwtpiHSh6dAk2stEPXQaNrjwnnrajhNybOzwhkxM5aU7fMjJsb72JhD/OXwCMXYJ8t5/tMD+LD/s94rDCAAAA[0m[Pipeline] { (Deploy)
+[8mha:////4AQJiafrO1BNt5aWlgXyflSJcMQETBlqAo6nu73m9Dt4AAAApB+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGigQVVrLDS8wsTFOrDtjOyQVL+Jr/IFAJCq2WO1sM88XLFOEI0eLraHOUWocBt/baeHAsbt4HrDlMzZMib1BaQbJ2tQzSs4G5hQlLASsDDWekyObYS1adVeVV2SrU47TdxBQOn2DBxRiMmcV8xfGCJtrrxPTz/NXAGPIUG53n9qHN27Iu42+AAAA[0m[Pipeline] sshCommand
+Host key checking is off. It may be vulnerable to man-in-the-middle attacks.
+[jsch] Permanently added 'BHLINAPP.INTRANET.FW' (RSA) to the list of known hosts.
+Connected to node-1[BHLINAPP.INTRANET.FW:22] (SSH-2.0-OpenSSH_5.3)
+Started command node-1#2: ssh  -t ezaffiro@as402pwc.intranet.fw ./mleone/list_rep.sh
+node-1|CONNECTINNG...
+node-1|
+node-1|Informatica(r) PMREP, version [9.6.1 HotFix3], build [990.0611], LINUX 64-bit
+node-1|Copyright (c) Informatica Corporation 1994 - 2015
+node-1|All Rights Reserved.
+node-1|This Software is protected by U.S. Patent Numbers 5,794,246; 6,014,670; 6,016,501; 6,029,178; 6,032,158; 6,035,307; 6,044,374; 6,092,086; 6,208,990; 6,339,775; 6,640,226; 6,789,096; 6,823,373; 6,850,947; 6,895,471; 7,117,215; 7,162,643; 7,243,110; 7,254,590; 7,281,001; 7,421,458; 7,496,588; 7,523,121; 7,584,422; 7,676,516; 7,720,842; 7,721,270; 7,774,791; 8,065,266; 8,150,803; 8,166,048; 8,166,071; 8,200,622; 8,224,873; 8,271,477; 8,327,419; 8,386,435; 8,392,460; 8,453,159; 8,458,230; 8,707,336; 8,886,617; and RE44,478, International Patents and other Patents Pending.
+node-1|
+node-1|Invoked at Tue Jan 15 15:38:12 2019
+node-1|
+node-1|Connected to repository REPO_FW_DEV_961 in DMN_FW_DEV_961 as user mleone
+node-1|connect completed successfully.
+node-1|
+node-1|Completed at Tue Jan 15 15:38:17 2019
+node-1|Folder: Informatica(r)
+node-1|Folder: PMREP,
+node-1|Folder: version
+node-1|Folder: [9.6.1
+node-1|Folder: HotFix3],
+node-1|Folder: build
+node-1|Folder: [990.0611],
+node-1|Folder: LINUX
+node-1|Folder: 64-bit
+node-1|Folder: Copyright
+node-1|Folder: (c)
+node-1|Folder: Informatica
+node-1|Folder: Corporation
+node-1|Folder: 1994
+node-1|Folder: -
+node-1|Folder: 2015
+node-1|Folder: All
+node-1|Folder: Rights
+node-1|Folder: Reserved.
+node-1|Folder: This
+node-1|Folder: Software
+node-1|Folder: is
+node-1|Folder: protected
+node-1|Folder: by
+node-1|Folder: U.S.
+node-1|Folder: Patent
+node-1|Folder: Numbers
+node-1|Folder: 5,794,246;
+node-1|Folder: 6,014,670;
+node-1|Folder: 6,016,501;
+node-1|Folder: 6,029,178;
+node-1|Folder: 6,032,158;
+node-1|Folder: 6,035,307;
+node-1|Folder: 6,044,374;
+node-1|Folder: 6,092,086;
+node-1|Folder: 6,208,990;
+node-1|Folder: 6,339,775;
+node-1|Folder: 6,640,226;
+node-1|Folder: 6,789,096;
+node-1|Folder: 6,823,373;
+node-1|Folder: 6,850,947;
+node-1|Folder: 6,895,471;
+node-1|Folder: 7,117,215;
+node-1|Folder: 7,162,643;
+node-1|Folder: 7,243,110;
+node-1|Folder: 7,254,590;
+node-1|Folder: 7,281,001;
+node-1|Folder: 7,421,458;
+node-1|Folder: 7,496,588;
+node-1|Folder: 7,523,121;
+node-1|Folder: 7,584,422;
+node-1|Folder: 7,676,516;
+node-1|Folder: 7,720,842;
+node-1|Folder: 7,721,270;
+node-1|Folder: 7,774,791;
+node-1|Folder: 8,065,266;
+node-1|Folder: 8,150,803;
+node-1|Folder: 8,166,048;
+node-1|Folder: 8,166,071;
+node-1|Folder: 8,200,622;
+node-1|Folder: 8,224,873;
+node-1|Folder: 8,271,477;
+node-1|Folder: 8,327,419;
+node-1|Folder: 8,386,435;
+node-1|Folder: 8,392,460;
+node-1|Folder: 8,453,159;
+node-1|Folder: 8,458,230;
+node-1|Folder: 8,707,336;
+node-1|Folder: 8,886,617;
+node-1|Folder: and
+node-1|Folder: RE44,478,
+node-1|Folder: International
+node-1|Folder: Patents
+node-1|Folder: and
+node-1|Folder: other
+node-1|Folder: Patents
+node-1|Folder: Pending.
+node-1|Folder: Invoked
+node-1|Folder: at
+node-1|Folder: Tue
+node-1|Folder: Jan
+node-1|Folder: 15
+node-1|Folder: 15:38:17
+node-1|Folder: 2019
+node-1|Folder: KMN_TLS
+node-1|Folder: DB_TOOLS
+node-1|Folder: PEGA
+node-1|Folder: TEST_20131024
+node-1|Folder: DWH
+node-1|Folder: TUTORIAL
+node-1|Folder: NETDB
+node-1|Folder: EDH_20131024
+node-1|Folder: EDH
+node-1|Folder: SOM
+node-1|Folder: ODH
+node-1|Folder: JMS_TEST
+node-1|Folder: WS_TEST
+node-1|Folder: TEST
+node-1|Folder: TEST_20131025
+node-1|Folder: CBSMIGRA_TEST
+node-1|Folder: CBSMIGRA
+node-1|Folder: CBSMIGRA_FASE2
+node-1|Folder: CDB
+node-1|Folder: TTSCC
+node-1|Folder: LA_DWH
+node-1|Folder: CLDB
+node-1|Folder: MDB
+node-1|Folder: BRM
+node-1|Folder: SPY
+node-1|Folder: OCS
+node-1|Folder: USLAM_LUGLIO
+node-1|Folder: KMN_TLS_20170828
+node-1|Folder: GDPR_P180081_BFX
+node-1|Folder: GDPR_P180582_BFX
+node-1|Folder: KMN_TLS_20171218
+node-1|Folder: ETL_EXT
+node-1|Folder: SAP
+node-1|Folder: OMC
+node-1|Folder: MDB_20170331
+node-1|Folder: KML_TLS_20170331
+node-1|Folder: OSS
+node-1|Folder: DWHLA
+node-1|Folder: MDB_20171102
+node-1|Folder: GDPR
+node-1|Folder: INVOICE
+node-1|Folder: MDM_TLS
+node-1|Folder: DWH_20170116
+node-1|Folder: KMN_TLS_20170123
+node-1|Folder: DWHRES
+node-1|Folder: MDB_20170720_ANTE_P170678
+node-1|Folder: YV
+node-1|Folder: USLAM_20171011
+node-1|Folder: CNI_NIS
+node-1|Folder: USLAM_20171218
+node-1|Folder: TP
+node-1|Folder: USLAM_TF5
+node-1|Folder: MCF
+node-1|Folder: CICD_MARIO
+node-1|Folder: AGL_RETENTION
+node-1|Folder: CMM
+node-1|Folder: MRM
+node-1|Folder: IRIS
+node-1|Folder: MDB_20161013
+node-1|Folder: MDB_20170116
+node-1|Folder: MDB_20170201
+node-1|Folder: MDB_20171108
+node-1|Folder: TTS
+node-1|Folder: MDB_20170828
+node-1|Folder: DBSELLER
+node-1|Folder: NPS
+node-1|Folder: SDA
+node-1|Folder: EGON
+node-1|Folder: MDB_20161213
+node-1|Folder: SIRE
+node-1|Folder: MDB_20170123
+node-1|Folder: CLDB_20170607
+node-1|Folder: MDB_20170215
+node-1|Folder: MDB_GG_20170508
+node-1|Folder: USLAM
+node-1|Folder: IFRS15
+node-1|Folder: ENI
+node-1|Folder: IFRS15_BASELINE
+node-1|Folder: GDPR_ante_P180082
+node-1|Folder: .listobjects
+node-1|Folder: completed
+node-1|Folder: successfully.
+node-1|Folder: Completed
+node-1|Folder: at
+node-1|Folder: Tue
+node-1|Folder: Jan
+node-1|Folder: 15
+node-1|Folder: 15:38:22
+node-1|Folder: 2019
+node-1|End
+node-1|Connection to as402pwc.intranet.fw closed.
+node-1|
+Success command node-1#2: ssh  -t ezaffiro@as402pwc.intranet.fw ./mleone/list_rep.sh
+Disconnected from node-1[BHLINAPP.INTRANET.FW:22]
+[8mha:////4AXN74DaRPTpmuSPePzBv+NNAr6A5nS0jitdKsU+9IBtAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiGoSEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQHhgNoTvgAAAA==[0m[Pipeline] }
+[8mha:////4HsjSOcth5UVY1Qfk2tXB6SPJaVDpioj3qYNBLPy9CPqAAAApR+LCAAAAAAAAP9tjTEOwjAQBC9BFLSUPOIiCgqEqNJabniBiY1xYt0Z2yGpeBFf4w8EIlGxxWpnm3m+YJkiHDlabA11jlLjMPjeTgsHjt3F84Atn7FhSuwNSjNI1qaeUXI2MKcoYSFgZajxnBzZDGvRqruqvCJbnXKcvoOA0ukbPKAQkzmrmL8wRthce52Yfp6/AhhDyFBu95/avQH+Ao9BvgAAAA==[0m[Pipeline] // stage
+[8mha:////4AH0D0Et4LXCcr4JGHXsUDCH3fDhgJ3JuvlhRkMNu3PJAAAAox+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMJBiA5R0VppeIFJjHFi3QX7QlLxIr7GH4iIRMVWO9PM641lijhydKqx1HpKlVdd6N301MCxvQYeVMMXVTElDlaVdii5tqcZSxaLeVmOhcbKUhU4eXKCtW7MwxTBkCvOEid30Mh9fccTmZ7KYqJ8YYzY3Po6Mf06fwMYu06Q77aCbP8BK1nRVL0AAAA=[0m[Pipeline] }
+[8mha:////4CouA8EmuM2fk/uWN8Y6z8qoCJtGJ3WMwNOm05MrKC8MAAAAoh+LCAAAAAAAAP9tjTEOwjAQBDdBFLSUPMIRUCIqWisNLzCJMU6su2BfSCpexNf4AxGRqNhqZ5p5vbFMEUeOTjWWWk+p8qoLvZueGji218CDaviiKqbEwarSDiXX9jRjyWIxL8ux0FhZqgInT06w1o15mCIYcsVZ4uQOGrmv73gi01NZTJQvjBGbW18npl/nbwBj1wny3VaQ7T845dX3vQAAAA==[0m[Pipeline] // node
+[8mha:////4JVgLtrDK7dxR2EL6mBa46CivKX5TuK+k3g4j+n+XNxdAAAAoh+LCAAAAAAAAP9tjbEOgjAURS8YB1dHP6IkrMbJtWHxCyrUWmjeg/YhTH6Rv+Y/SCRx8k73nOW83timiBNHp1pLnadUe9WH0S1PTRy7W+BJtXxVNVPiYFVlp4obe16xYrFYl+XYaOws1YGTJyfY69Y8TBEMueIicXFHjdw3A57I9FIWE+ULc8ThPjaJ6df5G8Dc94K8LAVZ+QF+r3LHvQAAAA==[0m[Pipeline] End of Pipeline
+Finished: SUCCESS

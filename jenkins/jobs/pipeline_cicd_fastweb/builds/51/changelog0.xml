@@ -1,0 +1,11 @@
+commit d28666671e7a91475023f5d70c7edd689425bbc8
+tree ebaa876d8fcb42111d99d404cb1df84cb99e93b9
+parent 18288c4b2590d208a315af817a205154f18a0767
+author mario-deno <denote86@gmail.com> 2019-02-13 12:17:55 -0500
+committer mario-deno <denote86@gmail.com> 2019-02-13 12:17:55 -0500
+
+    renamed script
+
+
+
+:100755 100755 538332f00ac103259a294865089623263c6e3ebc 29614846ee52ef267baa0952e9a3f70a94a071c6 R068	Script/run_test.sh	Script/run_tests.sh

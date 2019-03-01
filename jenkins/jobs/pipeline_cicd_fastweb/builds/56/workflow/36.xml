@@ -1,0 +1,38 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.2">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.60">
+    <parentIds>
+      <string>35</string>
+    </parentIds>
+    <id>36</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.support.steps.build.BuildTriggerStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.60">
+      <arguments>
+        <entry>
+          <string>job</string>
+          <string>pipeline_cicd_fastweb_prod</string>
+        </entry>
+        <entry>
+          <string>parameters</string>
+          <list/>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.33">
+      <startTime>1550154696813</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+    <wf.a.LabelAction plugin="workflow-api@2.33">
+      <displayName>Building pipeline_cicd_fastweb_prod</displayName>
+    </wf.a.LabelAction>
+    <io.jenkins.blueocean.listeners.NodeDownstreamBuildAction plugin="blueocean-pipeline-api-impl@1.11.1">
+      <link plugin="blueocean-rest@1.11.1">
+        <href>/blue/rest/organizations/jenkins/pipelines/pipeline_cicd_fastweb_prod/runs/6/</href>
+      </link>
+      <description>pipeline_cicd_fastweb_prod #6</description>
+    </io.jenkins.blueocean.listeners.NodeDownstreamBuildAction>
+  </actions>
+</Tag>

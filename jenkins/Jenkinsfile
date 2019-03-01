@@ -1,0 +1,51 @@
+//jenkinsfile for pipeline_cicd_fastweb
+node {
+    
+     def remote = [:]
+        remote.name = "node-1"
+        remote.host = 'BHLINAPP.INTRANET.FW'
+        remote.user = 'ezaffiro'
+        remote.password = 'nov2015ATE'     
+        //remote.identityFile = '.ssh/id_rsa'
+        remote.allowAnyHosts = true
+        
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/mario-deno/Informatica.git'
+      
+   }
+   stage('Build') {
+        echo "nothing for now"
+   }
+   
+   stage('Deploy') {
+       // transfer via ssh all files (**) from jenkins workspace to BastionHost (Configure INFA402 from Manage Jenkins" -> "Configure System")
+        sshPublisher(publishers: [sshPublisherDesc(configName: 'INFA402', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: '', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'jenkins_workspace', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '**')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+        
+        //oracle objects       
+        sshCommand remote: remote, command: 'ssh -t ezaffiro@as402pwc.intranet.fw \"PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml oracle_files\\`; sqlplus.sh \\$a\"'
+                                            
+        //informatica objects
+        sshCommand remote: remote, command: 'ssh -t ezaffiro@as402pwc.intranet.fw \"PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_workflow\\`; put_workflow_repo.sh \\$a\"'
+        
+        //dvo objects
+        sshCommand remote: remote, command: 'ssh -t ezaffiro@as402pwc.intranet.fw \"PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_test\\`; deploy_test.sh \\$a\"'
+        
+ 
+   }
+   stage('Run workflow') {
+        sshCommand remote: remote, command: 'ssh -t ezaffiro@as402pwc.intranet.fw \"PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runworkflow\\`; run_workflow.sh \\$a\"'
+   }
+   
+   stage('Run tests') {
+       sshCommand remote: remote, command: 'ssh -t ezaffiro@as402pwc.intranet.fw \"PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runtest\\`; run_tests.sh \\$a\"'
+   }
+}
+
+stage('Deploy approval'){
+    input "Deploy to prod?"
+}
+
+stage ('trigger deploy prod') {
+    build job: 'pipeline_cicd_fastweb_prod', parameters: []
+}

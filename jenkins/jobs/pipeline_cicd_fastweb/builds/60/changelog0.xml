@@ -1,0 +1,11 @@
+commit 440d7dc0030cd7d8e4e985cab80dcdcce8e91682
+tree f33c9fb3f73304e10fa3cce698764fa43835dabb
+parent 2251a7080d6e0aa2344951586279e6991505dcd7
+author mario-deno <denote86@gmail.com> 2019-02-14 09:54:33 -0500
+committer mario-deno <denote86@gmail.com> 2019-02-14 09:54:33 -0500
+
+    apply label to auto check-in
+
+
+
+:100644 100644 cab745233ce92636c1a55682cbdfc6349c4c89e7 039932fde21688d434820e438f88eb2c8bb3a2b2 M	pwc/W_CICD.XML.CTRFL

@@ -1,0 +1,11 @@
+commit 0f972a3f94e710aec2716a135c1d5f50a748c49f
+tree 0ac85ecf35d4543c638f194a429d441e2a720b02
+parent 75e465e3631332b12ab9d4b231ad041687692e84
+author mario-deno <denote86@gmail.com> 2019-02-15 12:37:44 -0500
+committer mario-deno <denote86@gmail.com> 2019-02-15 12:37:44 -0500
+
+    fixed mapping
+
+
+
+:100755 100755 479777b53da557168fd79b2ceea8e86e691fd89c 435642fc4da9b4c43257136fc0c1b6a2dd410473 M	pwc/W_CICD.XML

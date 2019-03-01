@@ -1,0 +1,22 @@
+commit 7407db58a223802715081416b8bfd10d71d3fece
+tree 431fafd19900ab6627598287de09308dec0cf3a4
+parent f6579aad722b198598e956276e778b645c382b64
+author mario-deno <denote86@gmail.com> 2019-01-21 11:48:04 -0500
+committer mario-deno <denote86@gmail.com> 2019-01-21 11:48:04 -0500
+
+    complete path yml file
+
+
+
+:100644 100644 5517d6709641b1b564682a93a75030ff3ec80c4e d86515b8bc47d7899d7cdd3786184ebb76448695 M	mktdb_release1.yml
+commit f6579aad722b198598e956276e778b645c382b64
+tree b582a4026a8c09fadc89305dced3b9961526f864
+parent b6f6bdc8a0a083ef5eee4d94a1b8fa8cca77089a
+author mario-deno <denote86@gmail.com> 2019-01-21 11:43:26 -0500
+committer mario-deno <denote86@gmail.com> 2019-01-21 11:43:26 -0500
+
+    fix export variable sqlplus.sh
+
+
+
+:100755 100755 1c90bdd8c36f7c5705a445b6d19122bf89f84297 0aade7c02d782028304254021cd10fc6ee731954 M	Script/sqlplus.sh

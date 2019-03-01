@@ -1,0 +1,64 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.29">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.60">
+    <script>node {
+    
+     def remote = [:]
+        remote.name = &quot;node-1&quot;
+        remote.host = &apos;***&apos;
+        remote.user = &apos;ezaffiro&apos;
+        remote.password = &apos;**&apos;     
+        //remote.identityFile = &apos;.ssh/id_rsa&apos;
+        remote.allowAnyHosts = true
+        
+   stage(&apos;Preparation&apos;) { // for display purposes
+      // Get some code from a GitHub repository
+      git &apos;https://github.com/mario-deno/Informatica.git&apos;
+      
+   }
+   stage(&apos;Build&apos;) {
+        echo &quot;nothing for now&quot;
+   }
+   
+   stage(&apos;Deploy&apos;) {
+       // transfer via ssh all files (**) from jenkins workspace to BastionHost (Manage Jenkins&quot; -&gt; &quot;Configure System&quot;)
+        sshPublisher(publishers: [sshPublisherDesc(configName: &apos;INFA402&apos;, transfers: [sshTransfer(cleanRemote: false, excludes: &apos;&apos;, execCommand: &apos;&apos;, execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: &apos;[, ]+&apos;, remoteDirectory: &apos;jenkins_workspace&apos;, remoteDirectorySDF: false, removePrefix: &apos;&apos;, sourceFiles: &apos;**&apos;)], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+        
+        //oracle objects       
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml oracle_files\\`; sqlplus.sh \\$a\&quot;&apos;
+                                            
+        //informatica objects
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_workflow\\`; put_workflow_repo.sh \\$a\&quot;&apos;
+        
+        //dvo objects
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_test\\`; deploy_test.sh \\$a\&quot;&apos;
+        
+ 
+   }
+   stage(&apos;Run workflow&apos;) {
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runworkflow\\`; run_workflow.sh \\$a\&quot;&apos;
+   }
+   
+   stage(&apos;Run tests&apos;) {
+       sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runtest\\`; run_tests.sh \\$a\&quot;&apos;
+   }
+}
+
+stage(&apos;Deploy approval&apos;){
+    input &quot;Deploy to prod?&quot;
+}
+
+stage (&apos;trigger deploy prod&apos;) {
+    build job: &apos;pipeline_cicd_fastweb_prod&apos;, parameters: []
+}
+
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

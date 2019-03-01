@@ -1,0 +1,11 @@
+commit 75e465e3631332b12ab9d4b231ad041687692e84
+tree b6e0e61ac69e5f2ec80559c387a7ef8432da109d
+parent 440d7dc0030cd7d8e4e985cab80dcdcce8e91682
+author mario-deno <denote86@gmail.com> 2019-02-15 08:12:04 -0500
+committer mario-deno <denote86@gmail.com> 2019-02-15 08:12:04 -0500
+
+    worng pipeline
+
+
+
+:100644 100755 f5dc70655767f90cd78e0934e4798299663bc5d3 479777b53da557168fd79b2ceea8e86e691fd89c M	pwc/W_CICD.XML

@@ -1,0 +1,183 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.29">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.cli.BuildCommand_-CLICause>
+            <startedBy>anonymous</startedBy>
+          </hudson.cli.BuildCommand_-CLICause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.12">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.9.1">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.7.4">
+              <sha1>0f972a3f94e710aec2716a135c1d5f50a748c49f</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/master</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>65</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/mario-deno/Informatica.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.9.1">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/master</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/var/lib/jenkins/workspace/pipeline_cicd_fastweb</ws>
+    </hudson.plugins.git.GitTagAction>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.7">
+      <revisionStates>
+        <entry>
+          <string>git https://github.com/mario-deno/Informatica.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+    <com.cloudbees.jenkins.plugins.bitbucket.FirstCheckoutCompletedInvisibleAction plugin="cloudbees-bitbucket-branch-source@2.4.1"/>
+    <org.jenkinsci.plugins.workflow.support.steps.input.InputAction plugin="pipeline-input-step@2.8">
+      <ids class="java.util.concurrent.CopyOnWriteArrayList"/>
+    </org.jenkinsci.plugins.workflow.support.steps.input.InputAction>
+  </actions>
+  <queueId>47</queueId>
+  <timestamp>1550252882741</timestamp>
+  <startTime>1550252882747</startTime>
+  <result>SUCCESS</result>
+  <duration>177215</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>node {
+    
+     def remote = [:]
+        remote.name = &quot;node-1&quot;
+        remote.host = &apos;BHLINAPP.INTRANET.FW&apos;
+        remote.user = &apos;ezaffiro&apos;
+        remote.password = &apos;nov2015ATE&apos;     
+        //remote.identityFile = &apos;.ssh/id_rsa&apos;
+        remote.allowAnyHosts = true
+        
+   stage(&apos;Preparation&apos;) { // for display purposes
+      // Get some code from a GitHub repository
+      git &apos;https://github.com/mario-deno/Informatica.git&apos;
+      
+   }
+   stage(&apos;Build&apos;) {
+        echo &quot;nothing for now&quot;
+   }
+   
+   stage(&apos;Deploy&apos;) {
+       // transfer via ssh all files (**) from jenkins workspace to BastionHost (Manage Jenkins&quot; -&gt; &quot;Configure System&quot;)
+        sshPublisher(publishers: [sshPublisherDesc(configName: &apos;INFA402&apos;, transfers: [sshTransfer(cleanRemote: false, excludes: &apos;&apos;, execCommand: &apos;&apos;, execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: &apos;[, ]+&apos;, remoteDirectory: &apos;jenkins_workspace&apos;, remoteDirectorySDF: false, removePrefix: &apos;&apos;, sourceFiles: &apos;**&apos;)], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+        
+        //oracle objects       
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml oracle_files\\`; sqlplus.sh \\$a\&quot;&apos;
+                                            
+        //informatica objects
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_workflow\\`; put_workflow_repo.sh \\$a\&quot;&apos;
+        
+        //dvo objects
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml informatica_test\\`; deploy_test.sh \\$a\&quot;&apos;
+        
+ 
+   }
+   stage(&apos;Run workflow&apos;) {
+        sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runworkflow\\`; run_workflow.sh \\$a\&quot;&apos;
+   }
+   
+   stage(&apos;Run tests&apos;) {
+       sshCommand remote: remote, command: &apos;ssh -t ezaffiro@as402pwc.intranet.fw \&quot;PATH=~/cicd_framework:$PATH;a=\\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runtest\\`; run_tests.sh \\$a\&quot;&apos;
+   }
+}
+
+stage(&apos;Deploy approval&apos;){
+    input &quot;Deploy to prod?&quot;
+}
+
+stage (&apos;trigger deploy prod&apos;) {
+    build job: &apos;pipeline_cicd_fastweb_prod&apos;, parameters: []
+}
+
+</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>567889386</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>9620055</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>1550653447</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>89955625</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>101610550</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>45</iota>
+    <head>1:45</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@3.9.1">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/mario-deno/Informatica.git</url>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches class="singleton-list">
+          <hudson.plugins.git.BranchSpec>
+            <name>*/master</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.LocalBranch>
+            <localBranch>master</localBranch>
+          </hudson.plugins.git.extensions.impl.LocalBranch>
+        </extensions>
+      </scm>
+      <node></node>
+      <workspace>/var/lib/jenkins/workspace/pipeline_cicd_fastweb</workspace>
+      <changelogFile>/var/lib/jenkins/jobs/pipeline_cicd_fastweb/builds/65/changelog0.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

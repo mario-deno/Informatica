@@ -1,0 +1,12 @@
+commit 2251a7080d6e0aa2344951586279e6991505dcd7
+tree a9ef6045772bc69e4135eb4b9e1e9d2e75905da2
+parent 4f50c887dfe2db5e5d39685357cd609ffdaa074c
+author mario-deno <denote86@gmail.com> 2019-02-14 09:50:20 -0500
+committer mario-deno <denote86@gmail.com> 2019-02-14 09:50:20 -0500
+
+    apply label to auto check-in
+
+
+
+:100755 100755 5d07a49cafb264b0d6536edd745078c3e0719d2a b9cd69a019fa6087de41df31c90f2dc9b4606c06 M	Script/put_workflow_repo.sh
+:100644 100644 bcfa6c6d8b74a0f63181d864ba064eb59394c51a cab745233ce92636c1a55682cbdfc6349c4c89e7 M	pwc/W_CICD.XML.CTRFL

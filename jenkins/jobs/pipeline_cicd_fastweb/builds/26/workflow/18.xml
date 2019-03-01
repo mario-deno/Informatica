@@ -1,0 +1,50 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@2.22">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.60">
+    <parentIds>
+      <string>17</string>
+    </parentIds>
+    <id>18</id>
+    <descriptorId>org.jenkinsci.plugins.sshsteps.steps.CommandStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.60">
+      <arguments>
+        <entry>
+          <string>remote</string>
+          <linked-hash-map>
+            <entry>
+              <string>name</string>
+              <string>node-1</string>
+            </entry>
+            <entry>
+              <string>host</string>
+              <string>BHLINAPP.INTRANET.FW</string>
+            </entry>
+            <entry>
+              <string>user</string>
+              <string>ezaffiro</string>
+            </entry>
+            <entry>
+              <string>password</string>
+              <string>novMI2018set</string>
+            </entry>
+            <entry>
+              <string>allowAnyHosts</string>
+              <boolean>true</boolean>
+            </entry>
+          </linked-hash-map>
+        </entry>
+        <entry>
+          <string>command</string>
+          <string>ssh  -t ezaffiro@as402pwc.intranet.fw ./put_workflow_repo.sh /home/ezaffiro/jenkins_workspace/mapping1/W_ADDRESS_TO_FILE.XML /home/ezaffiro/jenkins_workspace/mapping1/W_ADDRESS_TO_FILE_ctr_file.xml -l logfile.logcat put_workflow_repo.sh</string>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.33">
+      <startTime>1547566436600</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>

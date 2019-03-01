@@ -1,0 +1,100 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.2">
+  <node class="cps.n.StepEndNode" plugin="workflow-cps@2.60">
+    <parentIds>
+      <string>27</string>
+    </parentIds>
+    <id>28</id>
+    <startId>4</startId>
+  </node>
+  <actions>
+    <wf.a.BodyInvocationAction plugin="workflow-api@2.33"/>
+    <wf.a.TimingAction plugin="workflow-api@2.33">
+      <startTime>1550154808634</startTime>
+    </wf.a.TimingAction>
+    <wf.a.ErrorAction plugin="workflow-api@2.33">
+      <error class="org.hidetake.groovy.ssh.session.BadExitStatusException" plugin="ssh-steps@1.1.1">
+        <detailMessage>Command returned exit status 2: ssh -t ezaffiro@as402pwc.intranet.fw &quot;PATH=~/cicd_framework:$PATH;a=\`parse_yaml.sh jenkins_workspace/mktdb_release1.yml dvo_runworkflow\`; run_workflow.sh \$a&quot;</detailMessage>
+        <stackTrace>
+          <trace>sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)</trace>
+          <trace>sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)</trace>
+          <trace>sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)</trace>
+          <trace>java.lang.reflect.Constructor.newInstance(Constructor.java:423)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:83)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:77)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:84)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:60)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:235)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:255)</trace>
+          <trace>org.hidetake.groovy.ssh.session.execution.Command$Helper.execute(Command.groovy:52)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite$StaticMetaMethodSiteNoUnwrapNoCoerce.invoke(StaticMetaMethodSite.java:151)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.call(StaticMetaMethodSite.java:91)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:141)</trace>
+          <trace>org.hidetake.groovy.ssh.session.execution.Command$Trait$Helper.execute(Command.groovy:30)</trace>
+          <trace>org.hidetake.groovy.ssh.session.execution.Command$Trait$Helper$execute.call(Unknown Source)</trace>
+          <trace>org.hidetake.groovy.ssh.session.SessionHandler.execute(SessionHandler.groovy)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+          <trace>org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:384)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.callCurrent(PogoMetaClassSite.java:69)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:174)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.SSHService$_executeCommand_closure3$_closure13.doCall(SSHService.groovy:175)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.SSHService$_executeCommand_closure3$_closure13.doCall(SSHService.groovy)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+          <trace>org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:294)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:57)</trace>
+          <trace>org.hidetake.groovy.ssh.util.Utility.callWithDelegate(Utility.groovy:17)</trace>
+          <trace>sun.reflect.GeneratedMethodAccessor502.invoke(Unknown Source)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.invoke(StaticMetaMethodSite.java:46)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.StaticMetaMethodSite.callStatic(StaticMetaMethodSite.java:102)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.callStatic(AbstractCallSite.java:214)</trace>
+          <trace>org.hidetake.groovy.ssh.session.SessionTask.wetRun(SessionTask.groovy:64)</trace>
+          <trace>org.hidetake.groovy.ssh.session.SessionTask.call(SessionTask.groovy:48)</trace>
+          <trace>java_util_concurrent_Callable$call.call(Unknown Source)</trace>
+          <trace>org.hidetake.groovy.ssh.core.Service.run(Service.groovy:81)</trace>
+          <trace>org.hidetake.groovy.ssh.core.Service$run$0.call(Unknown Source)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.SSHService.executeCommand(SSHService.groovy:170)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.steps.CommandStep$Execution$CommandCallable.execute(CommandStep.java:83)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.util.SSHMasterToSlaveCallable.call(SSHMasterToSlaveCallable.java:32)</trace>
+          <trace>hudson.remoting.LocalChannel.call(LocalChannel.java:45)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.steps.CommandStep$Execution.run(CommandStep.java:71)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.util.SSHStepExecution$1$1.call(SSHStepExecution.java:77)</trace>
+          <trace>hudson.security.ACL.impersonate(ACL.java:290)</trace>
+          <trace>org.jenkinsci.plugins.sshsteps.util.SSHStepExecution$1.run(SSHStepExecution.java:72)</trace>
+          <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+          <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</trace>
+          <trace>java.lang.Thread.run(Thread.java:748)</trace>
+        </stackTrace>
+        <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+          <c class="list"/>
+          <list reference="../c"/>
+        </suppressedExceptions>
+        <exitStatus>2</exitStatus>
+      </error>
+    </wf.a.ErrorAction>
+  </actions>
+</Tag>

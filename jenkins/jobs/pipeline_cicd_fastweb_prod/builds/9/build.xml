@@ -1,0 +1,94 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.29">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>pipeline_cicd_fastweb</upstreamProject>
+            <upstreamUrl>job/pipeline_cicd_fastweb/</upstreamUrl>
+            <upstreamBuild>65</upstreamBuild>
+            <upstreamCauses>
+              <hudson.cli.BuildCommand_-CLICause>
+                <startedBy>anonymous</startedBy>
+              </hudson.cli.BuildCommand_-CLICause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction plugin="pipeline-build-step@2.7">
+      <upstreamNodeId>42</upstreamNodeId>
+      <upstreamRunId>pipeline_cicd_fastweb#65</upstreamRunId>
+    </org.jenkinsci.plugins.workflow.support.steps.build.BuildUpstreamNodeAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters/>
+      <parameterDefinitionNames class="empty-list"/>
+    </hudson.model.ParametersAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.12">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>49</queueId>
+  <timestamp>1550253058865</timestamp>
+  <startTime>1550253058871</startTime>
+  <result>SUCCESS</result>
+  <duration>983</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>stage(&apos;Deploy integration&apos;) {
+    echo &quot;deployed to integration&quot;
+}
+
+stage(&apos;Test&apos;) {
+    parallel &apos;NFT&apos;: {
+        stage(&apos;NFT&apos;) {
+            echo &quot;NFT performed&quot;
+        }
+    }, &apos;IT&apos;: {
+        stage(&apos;IT&apos;) {
+            echo &quot;IT performed&quot;
+        }
+    }
+}
+
+stage(&apos;Deploy Prod&apos;) {
+    echo &quot;deployed to prod&quot;
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>358078060</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>24736073</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>833266922</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>58173403</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>67520145</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>34</iota>
+    <head>1:34</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>
